@@ -388,25 +388,90 @@ const Contact = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-slate-200 bg-white">
+    <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
-              <BarChart3 className="text-white w-5 h-5" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
+                <BarChart3 className="text-white w-5 h-5" />
+              </div>
+              <span className="font-display font-bold text-lg tracking-tight text-slate-900">ELITE<span className="text-slate-500">CONSULT</span></span>
             </div>
-            <span className="font-display font-bold text-lg tracking-tight text-slate-900">ELITE<span className="text-slate-500">CONSULT</span></span>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Providing world-class financial intelligence and strategic consulting since 2008. We empower global leaders with clarity and precision.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-900 transition-all">
+                <Linkedin size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-900 transition-all">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-900 transition-all">
+                <Instagram size={18} />
+              </a>
+            </div>
           </div>
 
-          <div className="flex gap-8">
-            <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors"><Twitter size={20} /></a>
-            <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors"><Instagram size={20} /></a>
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-display font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Navigation</h4>
+            <ul className="space-y-4">
+              {['Services', 'About Us', 'Case Studies', 'Insights', 'Careers'].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-slate-500 hover:text-slate-900 text-sm transition-colors">{link}</a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} EliteConsult. All rights reserved.
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-display font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Contact</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-sm text-slate-500">
+                <MapPin size={18} className="text-slate-900 shrink-0" />
+                <span>One Financial Plaza, 42nd Floor<br />New York, NY 10005</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Phone size={18} className="text-slate-900 shrink-0" />
+                <span>+1 (555) 000-1234</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Mail size={18} className="text-slate-900 shrink-0" />
+                <span>contact@eliteconsult.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="font-display font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Newsletter</h4>
+            <p className="text-slate-500 text-sm mb-4">Subscribe to receive our monthly financial insights.</p>
+            <div className="relative">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full bg-white border border-slate-200 rounded-full py-3 px-5 text-sm outline-none focus:ring-2 focus:ring-slate-900 transition-all"
+              />
+              <button className="absolute right-1.5 top-1.5 bg-slate-900 text-white p-2 rounded-full hover:bg-slate-800 transition-colors">
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-400 text-xs">
+            © {new Date().getFullYear()} EliteConsult Global Ltd. All rights reserved.
           </p>
+          <div className="flex gap-6">
+            <a href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Privacy Policy</a>
+            <a href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Terms of Service</a>
+            <a href="#" className="text-slate-400 hover:text-slate-900 text-xs transition-colors">Cookie Settings</a>
+          </div>
         </div>
       </div>
     </footer>
